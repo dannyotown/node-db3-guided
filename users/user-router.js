@@ -1,8 +1,10 @@
 const express = require('express');
-
+const postRouter = require('../posts/post-router')
 const db = require('../data/db-config.js');
 
 const router = express.Router();
+
+router.use('/:id/posts', postRouter)
 
 router.get('/', (req, res) => {
   db('users')
